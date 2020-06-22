@@ -14,5 +14,6 @@ buildNumber.properties
 **/.wvn
 **/target/
 
-.idea
+**/.idea
 ../.gitignore
+.idea
