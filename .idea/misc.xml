@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/gulimail-product/pom.xml" />
+        <option value="$PROJECT_DIR$/gulimail-ware/pom.xml" />
+        <option value="$PROJECT_DIR$/gulimail-order/pom.xml" />
+        <option value="$PROJECT_DIR$/gulimail-member/pom.xml" />
+        <option value="$PROJECT_DIR$/gulimail-coupon/pom.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+      </list>
+    </option>
+  </component>
+</project>
