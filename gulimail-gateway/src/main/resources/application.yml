@@ -1,0 +1,60 @@
+spring:
+#    datasource:
+#       driverClassName: com.mysql.cj.jdbc.Driver
+#       url: jdbc:mysql://39.98.43.101:3306/gulimail_pms?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
+#       username: root
+#       password: root
+    application:
+         name: gulimail-gateway
+
+    cloud:
+        nacos:
+          discovery:
+            server-addr: 39.98.43.101:8848
+        gateway:
+          routes:
+           - id: tets_route
+             uri: https://www.baidu.com
+             predicates:
+              - Query=url,baidu
+#
+
+           - id: admin_product
+             uri: lb://gulimail-product
+             predicates:
+              - Path=/api/product/**
+             filters:
+              - RewritePath=/api/(?<segment>.*),/$\{segment}
+
+           - id: admin_test
+             uri: lb://gulimail-fast
+             predicates:
+              - Path=/api/**
+             filters:
+              - RewritePath=/api/(?<segment>.*),/renren-fast/$\{segment}
+
+
+
+#        gateway:
+#            routes:
+#              - id: tets_route
+#                uri: https://www.baidu.com
+#                predicates:
+#                 - Query=url,baidu
+#
+#              - id: tets_qq
+#                uri: https://www.qq.com
+#                predicates:
+#                  - Query=url,qq
+
+#    application:
+#         name: gulimail-gateway
+#    cloud:
+
+
+#          - id: admin_test
+#            uri: lb://renren-fast
+#            predicates:
+#              - Path=/api/**
+#            filters:
+#              - RewritePath=/api/(?<segment>.*),/renren-fast/$\{segment}

@@ -1,0 +1,29 @@
+spring:
+  datasource:
+     driverClassName: com.mysql.cj.jdbc.Driver
+     url: jdbc:mysql://39.98.43.101:3306/gulimail_sms?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
+     username: root
+     password: root
+  cloud:
+   nacos:
+     discovery:
+       server-addr: 39.98.43.101:8848
+#  注册中心名称，如果没有显示不出这次中心，就无法进行远程调用
+#注册中心的名称是定义出来的
+#配置中心的名称是通过控制台生成的，可以查看nacos的dataid就是
+  application:
+    name: gulimail-coupon
+
+
+
+
+mybatis-plus:
+  mapper-locations: classpath:/mapper/**/*.xml
+  global-config:
+    db-config:
+      id-type: auto
+
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+server:
+  port: 7000

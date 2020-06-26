@@ -1,0 +1,28 @@
+spring:
+  datasource:
+     driverClassName: com.mysql.cj.jdbc.Driver
+     url: jdbc:mysql://39.98.43.101:3306/gulimail_ums?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
+     username: root
+     password: root
+#     配置数据中心，对nocas 服务的数据中心配置
+  cloud:
+     nacos:
+       discovery:
+         server-addr: 39.98.43.101:8848
+#对nocas 起一个名称，要不在里面扫描不出来
+  application:
+      name: gulimail-membe
+
+
+mybatis-plus:
+#说明插件配置的位置
+  mapper-locations: classpath:/mapper/**/*.xml
+#配置ID 为自增的主键
+  global-config:
+    db-config:
+      id-type: auto
+#配置打印mybatis-plus打印的log 语句
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+server:
+  port: 8000
